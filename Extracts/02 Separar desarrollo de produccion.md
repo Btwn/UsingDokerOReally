@@ -25,5 +25,6 @@ CMD ["/cmd.sh"]
 Y al correr el contenedor se especifica el entorno
 
 ```bash
+chmod +x cmd.sh
 docker run -e "ENV=DEV" -p 5000:5000 identidock
 ```
