@@ -1,7 +1,11 @@
 FROM python:3.9
 
-RUN pip install Flask
+RUN groupadd -r uwsgi && useradd -r -g uwsgi uwsgi
+RUN pip install Flask uWSGI
 WORKDIR /app
 COPY app /app
 
-CMD ["python", "identidock.py"]
+EXPOSE 9090 9191
+USER uwsgi
+
+CMD ["/cmd.sh"]
