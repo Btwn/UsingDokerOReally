@@ -42,3 +42,10 @@ curl localhost:5000
 se tiro un curl solo para comprobar que este corriendo, como resultado
 `Hello World!`
 
+
+para evitar estar crear la imagen en cada cambio de la aplicacion, se crea un volumen
+
+```bash
+sudo docker run -d -p 5000:5000 -v "$(pwd)"/app:/app identidock
+```
+
